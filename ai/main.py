@@ -13,7 +13,6 @@ async def predict(file: UploadFile):
             temp_image.write(file.file.read())
 
         result = model.predict(source=image_path)[0]
-        # todo no detection인 경우에 예외처리해줘야 함
         buildingName= model.names[int(result.boxes.cls[0])]
 
         return {"label": buildingName}
