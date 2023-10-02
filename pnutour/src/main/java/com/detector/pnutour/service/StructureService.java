@@ -99,7 +99,7 @@ public class StructureService {
 
     public void structureInsert(List<StructureRequest.StructureInsertDTO> structureInsertDTO) {
         List<com.detector.pnutour.entity.Structure> structures = structureInsertDTO.stream()
-                .map(s -> com.detector.pnutour.entity.Structure.builder().name(s.getName()).info(s.getInfo()).latitude(s.getLatitude()).longitude(s.getLongitude()).code(s.getCode()).build()).collect(Collectors.toList());
+                .map(s -> com.detector.pnutour.entity.Structure.builder().name(s.getName()).info(s.getInfo()).latitude(s.getLatitude()).longitude(s.getLongitude()).code(s.getCode()).type(s.getType()).build()).collect(Collectors.toList());
         structureRepository.saveAll(structures);
     }
 

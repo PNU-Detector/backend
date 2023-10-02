@@ -7,11 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StructureResponse {
-    @Getter
-    public static class StructureDetectDTO {
-        private String code;
-        private String name;
-    }
 
     @Getter
     public static class StructureFindDTO {
@@ -20,6 +15,7 @@ public class StructureResponse {
         private String info;
         private String latitude;
         private String longitude;
+        private String type;
 
         public StructureFindDTO(Structure structure) {
             this.code = structure.getCode();
@@ -27,7 +23,7 @@ public class StructureResponse {
             this.info = structure.getInfo();
             this.latitude = structure.getLatitude();
             this.longitude = structure.getLongitude();
-
+            this.type = structure.getType();
         }
     }
     @Getter
@@ -46,6 +42,7 @@ public class StructureResponse {
             private String latitude;
             private String longitude;
             private String info;
+            private String type;
 
             public StructureDTO(Structure structure){
                 this.code = structure.getCode();
@@ -53,6 +50,7 @@ public class StructureResponse {
                 this.latitude = structure.getLatitude();
                 this.longitude = structure.getLongitude();
                 this.info = structure.getInfo();
+                this.type = structure.getType();
             }
         }
 

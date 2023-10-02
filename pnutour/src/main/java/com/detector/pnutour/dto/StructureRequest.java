@@ -20,6 +20,7 @@ public class StructureRequest {
         private String latitude;
         private String longitude;
         private String info;
+        private String type;
     }
 
 
