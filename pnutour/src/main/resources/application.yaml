@@ -1,22 +1,4 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://mongodb:27017/pnutour
-#      host: localhost
-#      port: 27017
-#      authentication-database: admin
-#      username: yunjae
-#      password: qwer1234
-#      database: pnutour
-
-#      initialization-mode: always
-#      database-initializer:
-#        enabled: true
-#        script-encoding: UTF-8
-#        location: classpath:initial-data.yml
-#      repositories:
-#        enabled: true
-
-#server:
-#  address: 0.0.0.0
-#  port: 8080
+  profiles:
+    active:
+      - product
