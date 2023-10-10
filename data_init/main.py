@@ -33,7 +33,7 @@ def image_init():
     photo_files = [f for f in os.listdir(photo_directory) if f.endswith(".jpg")]
 
     # 업로드할 서버의 기본 URL
-    base_url = "http://localhost:8080/structures/"
+    base_url = "http://54.180.198.149:8080/structures/"
 
     # 각 사진 파일을 서버에 업로드
     for photo_file in photo_files:
@@ -47,7 +47,7 @@ def json_init():
     json_files = [f for f in os.listdir(json_directory) if f.endswith(".json")]
 
     # 업로드할 서버의 기본 URL
-    base_url = "http://localhost:8080/structures"
+    base_url = "http://54.180.198.149:8080/structures/"
 
     # 각 .json 파일을 서버에 전송
     for json_file in json_files:
@@ -59,7 +59,9 @@ def json_init():
         send_json_data(json_data, base_url)
 
 if __name__ == "__main__":
-    image_init()
-    print("-----------------이미지 업로드 완료-----------------")
     json_init()
     print("-----------------json 업로드 완료-----------------")
+    # image_init()
+    print("-----------------이미지 업로드 완료-----------------")
+
+
