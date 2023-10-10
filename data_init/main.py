@@ -45,7 +45,6 @@ def json_init():
     # 로컬 디렉토리에서 .json 파일 목록 가져오기
     json_directory = "./jsons"  # 디렉토리 경로를 적절히 수정하세요.
     json_files = [f for f in os.listdir(json_directory) if f.endswith(".json")]
-
     # 업로드할 서버의 기본 URL
     base_url = "http://54.180.198.149:8080/structures/"
 
@@ -61,6 +60,7 @@ def json_init():
 if __name__ == "__main__":
     json_init()
     print("-----------------json 업로드 완료-----------------")
+    #이미지는 이미 올라가 있다.
     # image_init()
     print("-----------------이미지 업로드 완료-----------------")
 
