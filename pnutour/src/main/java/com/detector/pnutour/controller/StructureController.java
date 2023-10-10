@@ -20,18 +20,18 @@ public class StructureController {
     }
 
 
-    //건물,편의시설,명소 개별 조회
+    //건물,편의시설,명소,조형물 개별 조회
     @GetMapping("structures/{code}")
     public ResponseEntity<ApiUtils.ApiResult> buildingFind(@PathVariable String code){
         return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFind(code)));
     }
 
-    // 건물,편의시설,명소 종류별 전체 조회 - 이름순
+    // 건물,편의시설,명소,조형물 종류별 전체 조회 - 이름순
     @GetMapping("/structures/{structureType}/order-name")
     public ResponseEntity<ApiUtils.ApiResult> buildingFindAllOrderName(@PathVariable String structureType){
         return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFindAllOrderName(structureType)));
     }
-    // 건물,편의시설,명소 종류별 전체 조회 - 코드순
+    // 건물,편의시설,명소,조형물 종류별 전체 조회 - 코드순
     @GetMapping("/structures/{structureType}/order-code")
     public ResponseEntity<ApiUtils.ApiResult> buildingFindAllOrderCode(@PathVariable String structureType){
         return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFindAllOrderCode(structureType)));
@@ -45,28 +45,28 @@ public class StructureController {
     }
 
 
-    //  건물정보 추가 및 변경
+    //  정보 추가 및 변경
     @PostMapping("/structures")
     public ResponseEntity<ApiUtils.ApiResult> buildingInsert(@RequestBody List<StructureRequest.StructureInsertDTO> buildingInsertDTOS){
         structureService.structureInsert(buildingInsertDTOS);
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 
-    //  건물정보 추가 및 변경
+    //  정보 삭제
     @DeleteMapping("/structures/{code}")
-    public ResponseEntity<ApiUtils.ApiResult> buildingInsert(@PathVariable String code){
+    public ResponseEntity<ApiUtils.ApiResult> buildingDelete(@PathVariable String code){
         structureService.structureDelete(code);
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 
-    //건물 이미지 변경
+    //이미지 변경
     @PutMapping("structures/{code}/images")
     public ResponseEntity<ApiUtils.ApiResult> buildingIamgeInsert(@PathVariable String code, @RequestBody MultipartFile file){
         structureService.structureImageInsert(code,file);
         return ResponseEntity.ok().body(ApiUtils.success(null));
     }
 
-    //건물 이미지 조회
+    //이미지 조회
     @GetMapping("structures/{code}/images")
     public ResponseEntity<?> buildingImageFind(@PathVariable String code){
         return ResponseEntity.ok().contentType(MediaType.valueOf("image/png")).body(structureService.structureImageFind(code));
