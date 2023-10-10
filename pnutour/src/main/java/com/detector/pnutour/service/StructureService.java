@@ -37,64 +37,64 @@ public class StructureService {
     }
 
 //로컬용
-    public void structureImageInsert(String code, MultipartFile file)  {
-        if (!file.isEmpty()){
-            String absolutePath = new File("").getAbsolutePath();
-                System.out.println(absolutePath);
-                System.out.println(File.separator);
-            String path = absolutePath+"/src/main/resources/static/images/structures/"+code+".jpg" ;
-            try {
-                file.transferTo(new File(path));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
-
-//    //    도커 배포용
-//    public void structureImageInsert(String code, MultipartFile file) {
-//        if (!file.isEmpty()) {
+//    public void structureImageInsert(String code, MultipartFile file)  {
+//        if (!file.isEmpty()){
+//            String absolutePath = new File("").getAbsolutePath();
+//                System.out.println(absolutePath);
+//                System.out.println(File.separator);
+//            String path = absolutePath+"/src/main/resources/static/images/structures/"+code+".jpg" ;
 //            try {
-//                // 업로드 디렉토리와 파일 이름을 조합하여 저장 경로를 생성합니다.
-//                String path = "/app/static/images/structures/" + code + ".jpg";
-//
-//                // 디렉토리가 없으면 생성합니다.
-//                File directory = new File("/app/static/images/structures/");
-//                if (!directory.exists()) {
-//                    directory.mkdirs(); // 디렉토리를 생성합니다.
-//                }
-//
-//                // MultipartFile을 File로 변환하고 저장합니다.
-//                File destination = new File(path);
-//                file.transferTo(destination);
+//                file.transferTo(new File(path));
 //            } catch (IOException e) {
 //                throw new RuntimeException(e);
 //            }
 //        }
+//
 //    }
 
+//    //    도커 배포용
+    public void structureImageInsert(String code, MultipartFile file) {
+        if (!file.isEmpty()) {
+            try {
+                // 업로드 디렉토리와 파일 이름을 조합하여 저장 경로를 생성합니다.
+                String path = "/app/static/images/structures/" + code + ".jpg";
 
-//로컬용
-    public byte[] structureImageFind(String code) {
-        String absolutePath = new File("").getAbsolutePath();
-        File file =  new File(absolutePath+"/src/main/resources/static/images/structures/"+code+".jpg");
-        try {
-            return Files.readAllBytes(file.toPath());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+                // 디렉토리가 없으면 생성합니다.
+                File directory = new File("/app/static/images/structures/");
+                if (!directory.exists()) {
+                    directory.mkdirs(); // 디렉토리를 생성합니다.
+                }
+
+                // MultipartFile을 File로 변환하고 저장합니다.
+                File destination = new File(path);
+                file.transferTo(destination);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
-//    //도커배포용
+
+//로컬용
 //    public byte[] structureImageFind(String code) {
-//        File file =  new File("/app/static/images/structures/"+code+".jpg");
+//        String absolutePath = new File("").getAbsolutePath();
+//        File file =  new File(absolutePath+"/src/main/resources/static/images/structures/"+code+".jpg");
 //        try {
 //            return Files.readAllBytes(file.toPath());
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
 //    }
+
+    //도커배포용
+    public byte[] structureImageFind(String code) {
+        File file =  new File("/app/static/images/structures/"+code+".jpg");
+        try {
+            return Files.readAllBytes(file.toPath());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void structureInsert(List<StructureRequest.StructureInsertDTO> structureInsertDTO) {
         List<com.detector.pnutour.entity.Structure> structures = structureInsertDTO.stream()
