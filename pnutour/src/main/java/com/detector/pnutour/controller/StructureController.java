@@ -38,12 +38,23 @@ public class StructureController {
     }
 
 
-    // 편의시설 전체 조회 - 거리순
+    // 건물,편의시설,명소,조형물 전체 조회 - 거리순
     @GetMapping("/structures/{structureType}/order-distance/{code}")
     public ResponseEntity<ApiUtils.ApiResult> buildingFindAllOrderDistance(@PathVariable String structureType,@PathVariable String code){
         return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFindAllOrderDistance(structureType,code)));
     }
 
+    // 편의시설 타입별 조회 - 거리순
+    @GetMapping("/structures/conveniences/order-distance/{type}/{code}")
+    public ResponseEntity<ApiUtils.ApiResult> buildingFindAllByTypeOrderDistance(@PathVariable String type,@PathVariable String code){
+        return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFindAllByTypeOrderDistance(type,code)));
+    }
+
+    // 편의시설 타입별 전체 조회 - 이름순
+    @GetMapping("/structures/conveniences/order-name/{type}")
+    public ResponseEntity<ApiUtils.ApiResult> buildingFindAllByTypeOrderName(@PathVariable String type){
+        return ResponseEntity.ok().body(ApiUtils.success(structureService.structureFindAllByTypeOrderName(type)));
+    }
 
     //  정보 추가 및 변경
     @PostMapping("/structures")
