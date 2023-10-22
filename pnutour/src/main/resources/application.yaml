@@ -1,4 +1,9 @@
 spring:
-  profiles:
-    active:
-      - product
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017
+#      host: localhost
+#      port: 27017
+      database: pnutour
+#      authentication-database: admin
+#

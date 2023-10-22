@@ -1,11 +1,13 @@
 package com.detector.pnutour.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 
+@Repository
 public interface StructureRepository extends MongoRepository<com.detector.pnutour.entity.Structure,String> {
     Optional<com.detector.pnutour.entity.Structure> findByCode(String code);
     List<com.detector.pnutour.entity.Structure> findAllByCodeStartingWithOrderByName(String structureType);
