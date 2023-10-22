@@ -33,7 +33,7 @@ def image_init():
     photo_files = [f for f in os.listdir(photo_directory) if f.endswith(".jpg")]
 
     # 업로드할 서버의 기본 URL
-    base_url = "http://54.180.198.149:8080/structures/"
+    base_url = "localhost:8080/structures/"
 
     # 각 사진 파일을 서버에 업로드
     for photo_file in photo_files:

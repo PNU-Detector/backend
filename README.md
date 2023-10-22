@@ -25,6 +25,11 @@
 2. 필요에 따라 docker-compose 파일을 수정한다. (ex. 포트 수정)
 3. 터미널에서 `docker-compose up` 명령어를 입력한다.
 
+#### 서버에 초기 데이터 넣기
+1. `cd ../data_init` 명령어로 디렉토리를 이동한다.
+2. 필요에 따라 main.py의 hosturl을 수정한다.
+3. `python main.py `명령어로 파이썬 파일을 실행한다.
+
 #### 안드로이드 애플리케이션
 1. `frontend/pnutour/app-release.apk` apk 파일을 다운 받는다.
 2. 안드로이드 디바이스에 apk 파일을 설치 한다.
@@ -41,6 +46,13 @@
    3. `docker build --tag <도커이미지이름> <태그>` 명령어를 이용하여 도커 이미지를 생성하다.
 3. docker-compose 파일을 본인이 설정한 도커이미지 이름으로 수정하고 실행환경에 맞게 포트를 수정한다.
 4. `docker-compose up` 명령어를 사용하여 실행한다.
+
+
+#### 서버에 초기 데이터 넣기
+1. `cd ../data_init` 명령어로 디렉토리를 이동한다.
+2. 필요에 따라 main.py의 hosturl을 수정한다.
+3. `python main.py `명령어로 파이썬 파일을 실행한다.
+
 
 #### 안드로이드 애플리케이션
 1. `frontend/pnutour/app-release.apk` apk 파일을 다운 받는다.
