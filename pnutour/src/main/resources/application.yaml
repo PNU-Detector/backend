@@ -6,4 +6,3 @@ spring:
 #      port: 27017
       database: pnutour
 #      authentication-database: admin
-#
