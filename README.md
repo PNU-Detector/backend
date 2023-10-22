@@ -11,7 +11,6 @@
 
 ## 3. 구성도
 ![구성도](https://github.com/pnucse-capstone/Capstone-Template-2023/assets/81746373/7083aa20-cdca-4296-ac06-34c465f8c107)
-프로젝트 결과물의 개괄적인 동작을 파악할 수 있는 이미지와 글을 작성하세요.
 
 ## 4. 소개 및 시연 영상
 <img src="https://github.com/pnucse-capstone/Capstone-Template-2023/assets/81746373/7fabef03-a7fe-47c7-b547-7ea092831c2d">
@@ -19,6 +18,7 @@
 
 ## 5. 사용법
 ### 5.1 간단 사용법
+이 방법은 도커허브에 미리 올려 놓은 도커이미지를 사용합니다.
 #### 서버 실행
 0. 도커가 설치 되어 있어야 한다.
 1. docker-compose 파일을 다운 받는다.
